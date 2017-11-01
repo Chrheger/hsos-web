@@ -1,0 +1,62 @@
+/*VinoStyle*/
+body { 
+    max-width:auto;
+  
+}
+
+.inline-block {
+  display: inline-block;
+}
+  
+h1, h2 {
+    color: black; 
+}
+
+.topnav {/* Style Navigationsleiste (langer Balken)*/
+  overflow: hidden;
+  
+  background-image: 
+   url("https://images.unsplash.com/photo-1447933601403-0c6688de566e?dpr=1&auto=compress,format&fit=crop&w=956&h=&q=80&cs=tinysrgb&crop=");
+  
+}
+
+.topnav a { /*  Style innerhalb der Navigationleiste */
+  float: left;
+  display: block;
+  background-color: var(--darkred);
+  color: white;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 75%;
+  border-width: 0px;
+  border-radius: 0px;
+  margin-left: 0px; /* Abstand zwischen den Elementen*/
+}
+
+.topnav a:hover {/*schwebende Elemente, gehe mit den Mauszeiger über Navi-Leiste rüber)*/
+    color: white; /* Schriftfarbe*/
+    background-color: var(--red); 
+}
+
+.topnav a.active { /* Style grüne Startseite-Button*/
+    background-color: var(--darkgreen);
+    color: white;
+}
+
+a:hover{ color:black;}
+
+a { /* Style zum Sortiment-Button*/
+	text-decoration: none;
+	color: white;
+	background-color: var(--darkred);
+	background-color:;
+	border-style: outset;
+	border-width: 0px;
+	border-radius: 15px;
+	padding: 16px;
+	margin-top: 32px;
+	font-size:150%;
+}
+		
+  
