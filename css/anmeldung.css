@@ -1,0 +1,22 @@
+
+.btn { /*Style für "Anmeldung" - Buttons */
+    background-color: darkgreen;
+    color: white;
+    border-color: transparent;
+}
+
+a:hover.btn {
+	color: white;
+	background-color: var(--red) ;
+}
+.anmelden {
+	text-decoration: none;
+	color: white;
+	background-color: darkred;
+	border-width: 0px;
+	border-radius: 5px;
+	padding: 16px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	font-size:75%;
+}

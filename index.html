@@ -1,108 +1,110 @@
-</html><!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+</html lang="de">
 
 <head>
-    
-    <meta charset="utf-8">
     <title>Homepage Cafe Kramer</title>
-<!-- externe Stylesheet Datei (.css) einbinden: 
-     Code : <link rel="stylesheet" href="Ornder(css)/Dateiname.css">
-     verwende " ../ "  wenn die Datei in übergeordneten Ordner liegt
-     Erstelle eine css Datei, dann kopieren und einfügen von Stylecode , ohne <style> Tag
-     Stylesheet Datei findet ihr im CSS Ornder , "index.css"
--->
+<!-- wichtige meta tag einbinden -->
+<!-- zeichenkodierung zB. ö,ä...-->
+    <meta charset="utf-8">
+<!-- Anzeige auf mobilen Geräten zb zooomen, scrollen...------------------------------------------- -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -------------------------------------------------------------------------------  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<!-- Unsere CSS Datei ------------------------------------------------------------------------------ -->
     <link rel="stylesheet"  href="css/color.css"> 
+    <link rel="stylesheet"  href="css/carousel.css"> 
     <link rel="stylesheet"  href="css/index.css"> 
-    <link rel="stylesheet"  href="css/slide.css"> 
 </head>
 
 <body>
-    
-<img src="images/logo_kramer.png" height="150px" style=float:"left">
+<!-- Logo ---------------------------------------------------------------------------------------- -->   
+<img src="images/logo_kramer.png" height="100px" style=float:"left">
 <br></br>
-
+<!-- Navi bar ------------------------------------------------------------------------------------ -->          
 <div class="topnav">
-     <b>
-      <a class="active" href="indexBlack.html"   
-      
-        onMouseOver="this.style.backgroundColor='var(--green)' /* Startseite Button soll grün/dunkelgrün */"
-        onMouseOut="this.style.backgroundColor='var(--darkgreen)'">Startseite</a>
-      <a href="sortiment_link.html">Sortiment</a>
-      <a href="login.html">Anmeldung</a>
-      <a href="#about">Über Uns</a>
-      <a href="kontakt.html">Kontakt</a>
-     </b>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="index.html"> Startseite</a>    
+                <a href="sortiment_link.html">Sortiment</a>
+                <a href="anmeldung.html">Anmeldung</a>
+                <a href="ueber_uns.html">Über Uns</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div align="center"> 
-    <font size="4"> 
-        <h1> Herzlichen Willkommen im Cafe Kramer ! </h1>
-        <h2>Ganz einfach frisches Brot, selbstgemachte Torten und vieles mehr vorbestellen!</h2>
-    </font> 
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 8</div>
-            <img src="images/bild_2.jpg" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 8</div>
-            <img src="images/bild_4.jpg" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 8</div>
-            <img src="images/bild_3.jpg" style="width:100%">
-        </div>
-         <div class="mySlides fade">
-            <div class="numbertext">4 / 8</div>
-            <img src="images/bild_1.jpg" style="width:100%">
-        </div>
-         <div class="mySlides fade">
-            <div class="numbertext">5 / 8</div>
-            <img src="images/bild_5.jpg" style="width:100%">
-        </div>
-         <div class="mySlides fade">
-            <div class="numbertext">6 / 8</div>
-            <img src="images/bild_6.jpg" style="width:100%">
-        </div>
-         <div class="mySlides fade">
-            <div class="numbertext">7 / 8</div>
-            <img src="images/bild_7.jpg" style="width:100%">
-        </div>
-         <div class="mySlides fade">
-            <div class="numbertext">8 / 8</div>
-            <img src="images/bild_8.jpg" style="width:100%">
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span>
-  <span class="dot" onclick="currentSlide(7)"></span>
-  <span class="dot" onclick="currentSlide(8)"></span>
-</div>
-        
-    <br></br>
-   
-<!-- Hintergrundfarbe wechselt sich, wenn der Mauszeiger rüber geht--> 
-    <a href="sortiment_link.html"    
-        onMouseOver="this.style.backgroundColor='var(--red)'"    
-        onMouseOut="this.style.backgroundColor='var(--darkred)'"><b>Zum Sortiment</b></a>
-<!-- Schriftfarbe ändern: siehe unten.
-   onMouseOver="this.style.color='green'"
-   onMouseOut="this.style.color='red'"
--->
-
-</div>    
-	
+<!-- Text------------------------------------------------------------------------------------------ -->
 <br></br>
-	 
+<div class="container">
+  <div class="row">
+      <div class="col-md-12" align="center">
+          <h1>Herzlich Willkommen im Cafe Kramer!</h1>
+          <h2>Ganz einfach frisches Brot, selbstgemachte Torten und vieles mehr vorbestellen!</h2>
+      </div>
+  </div>
+</div>
+<br></br>   
+<!-- Slideshow, Bilder von Cafe Kramer --------------------------------------------------------------------------------- -->
+<div class="container">
+  <div class="row">
+    <div class="col-12" align="center">
+      
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="images/bild_1.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/bild_2.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/bild_3.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/bild_4.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/bild_5.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/bild_6.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/bild_7.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/bild_8.jpg" alt="">
+          </div>
+        </div>
+        
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>        
+<!-- Impressum -------------------------------------------------------------------------------------------- -->	 
 <hr>
     <p>
         <div align="center">
@@ -116,41 +118,17 @@
         <br>
         WWW.CAFE-KRAMER.DE
         <br>
-        TEL.: 0 54 91 / 22 11
+        TEL.: 05491 / 2211
         </p>
         </b>
         </div>
     </p>
 </hr>
-  
-  <script>
-var slideIndex = 1;
-showSlides(slideIndex);
+<!-- jQuery first, then Popper.js, then Bootstrap JS ----------------------------------------------- --> 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> 
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-</script>      
 </body>
 
 </html>

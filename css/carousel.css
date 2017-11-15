@@ -1,0 +1,24 @@
+.carousel {
+width:75%;
+margin:15 auto; /* center your carousel if other than 100% */
+}
+.carousel-control-next{
+	margin-bottom: 20%;
+	margin-top: 20%;
+	margin-right: 5px;
+	border-radius: 15%;
+	
+
+}
+
+.carousel-control-prev{
+	margin-top: 20%;
+	margin-bottom: 20%;
+	margin-left: 5px;
+	border-radius: 15%;
+}
+
+/* abgerundete Kanten beim Carousel */
+.d-block {
+	border-radius: 15%;
+}

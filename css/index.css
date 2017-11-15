@@ -1,23 +1,8 @@
-/*VinoStyle*/
-body { 
-    max-width:auto;
-  
-}
-
-.inline-block {
-  display: inline-block;
-}
-  
-h1, h2 {
-    color: black; 
-}
-
-.topnav {/* Style Navigationsleiste (langer Balken)*/
-  overflow: hidden;
-  
+/*index style*/
+.topnav {/* Style Navigationsleiste, langer Balken, kaffebohnen)*/
   background-image: 
    url("https://images.unsplash.com/photo-1447933601403-0c6688de566e?dpr=1&auto=compress,format&fit=crop&w=956&h=&q=80&cs=tinysrgb&crop=");
-  
+  overflow: hidden;
 }
 
 .topnav a { /*  Style innerhalb der Navigationleiste */
@@ -39,24 +24,30 @@ h1, h2 {
     background-color: var(--red); 
 }
 
-.topnav a.active { /* Style grüne Startseite-Button*/
-    background-color: var(--darkgreen);
-    color: white;
+a:hover{
+  text-decoration: none;
+  background-color: var(--red);
+  color: white
 }
 
-a:hover{ color:black;}
+/*.topnavsortiment { /* überpürfen, ob es gebraucht wird*/
+    background-color: green
+    color: white;
 
-a { /* Style zum Sortiment-Button*/
+a:hover{
+  background-color: var(--red);
+  color: white
+}*/
+
+a { /* das war doch für "a" also für alle verlinkung ?*/
 	text-decoration: none;
 	color: white;
-	background-color: var(--darkred);
-	background-color:;
+	background-color: darkred;
+	margin-left: 16px;
 	border-style: outset;
 	border-width: 0px;
-	border-radius: 15px;
-	padding: 16px;
+	border-radius: 15%;
+	padding: 10px;
 	margin-top: 32px;
-	font-size:150%;
 }
-		
-  
+

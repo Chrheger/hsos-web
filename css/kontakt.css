@@ -1,0 +1,28 @@
+ body { 
+            font-family: 'Open Sans';
+            max-width: auto;
+        }
+        
+        .block{
+            max-width: auto;
+            height: 700px;
+            background-image:url(http://www.lwvweston.org/brick051.jpg);
+            background-size: 150px;    
+        } 
+        
+        a:hover {/* Style schwebende Elemente (gehe mit den Mauszeiger über Navi-Leiste rüber)*/
+          background-color: #B23A48; 
+          color: white; /* Schriftfarbe*/
+        }
+        
+         a {
+			text-decoration: none;
+			color: #fff;
+			background-color: #9a031e;
+			margin-left: 16px;
+			border-style: outset;
+			border-width: 0px;
+			border-radius: 15px;
+			padding: 10px;
+			margin-top: 32px;
+		}
