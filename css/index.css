@@ -1,8 +1,7 @@
 /*index style*/
 .topnav {/* Style Navigationsleiste, langer Balken, kaffebohnen)*/
-  background-image: 
+  background-image:
    url("https://images.unsplash.com/photo-1447933601403-0c6688de566e?dpr=1&auto=compress,format&fit=crop&w=956&h=&q=80&cs=tinysrgb&crop=");
-  overflow: hidden;
 }
 
 .topnav a { /*  Style innerhalb der Navigationleiste */
@@ -30,15 +29,12 @@ a:hover{
   color: white
 }
 
-/*.topnavsortiment { /* überpürfen, ob es gebraucht wird*/
-    background-color: green
-    color: white;
 
 a:hover{
   background-color: var(--red);
   color: white
 }*/
-
+/* Wenn ich das zeichen "* /" (Zeile 36) entferne, verschieben sich die Link in Navilesite */ 
 a { /* das war doch für "a" also für alle verlinkung ?*/
 	text-decoration: none;
 	color: white;

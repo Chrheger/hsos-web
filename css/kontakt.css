@@ -10,12 +10,12 @@
             background-size: 150px;    
         } 
         
-        a:hover {/* Style schwebende Elemente (gehe mit den Mauszeiger über Navi-Leiste rüber)*/
+        .btnStart:hover {/* Style schwebende Elemente (gehe mit den Mauszeiger über Navi-Leiste rüber)*/
           background-color: #B23A48; 
           color: white; /* Schriftfarbe*/
         }
         
-         a {
+         .btnStart {
 			text-decoration: none;
 			color: #fff;
 			background-color: #9a031e;

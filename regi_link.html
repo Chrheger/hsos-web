@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+</html lang="de">
+
+<head>
+    <title>Anmeldung Cafe Kramer</title>
+<!-- wichtige meta tag einbinden -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Boostrap CSS Link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<!-- Unsere CSS Datei -->
+    <link rel="stylesheet"  href="css/color.css"> 
+    <link rel="stylesheet"  href="css/index.css"> 
+    <link rel="stylesheet"  href="css/neuAnmeldung.css">
+</head>
+
+<body>
+<!-- Logo ---------------------------------------------------------------------------------------- -->   
+<img src="images/logo_kramer.png" height="100px" style=float:"left">
+<br></br>
+ <!-- Navi bar ------------------------------------------------------------------------------------ -->            
+<div class="topnav">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <li class="nav-item dropdown">
+                 
+                 <a href="index.html"> Startseite</a>    
+                  <a href="sortiment_link.html">Sortiment</a>
+                  <a href="neuAnmeldung.html">Anmeldung/ Profil</a>
+                  <a href="ueber_uns.html">Über Uns</a>
+                  <a href="kontakt.html">Kontakt</a>
+                </li>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- Text ------------------------------------------------------------------------------- -->
+<br></br>
+    <div align="center"> 
+        <h1>Das Cafe Kramer</h1>
+        <h2>zum Bestellen hier registrieren!</h2>
+    </div>
+<br></br>
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-sm-3"></div>
+        <div class="col align-self-center">
+            <h3 class="text-center">Regristierung</h3>
+            <hr>
+            <div class="form-group">
+                <label for="inputEmail"> E-Mail</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Geben Sie eine gültige E-Mail-Adresse ein">
+               
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Passwort</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Geben Sie ein Passwort ein">
+            </div>
+
+
+
+            <!-- When this is clicked, signUp() is called -->
+ <a href="neuAnmeldung.html"  onclick="signUp()" class="btn btn-primary">Registrieren</a>
+
+
+
+            <hr>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+<!-- End of container -->
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- firebase ---------------------------------------------------------------------------------------- -->
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+<!-- js für regi -->
+
+<script>
+    /* global firebase */
+    var config = {
+        apiKey: "AIzaSyDR4bKKZ8nkBIrS-H9i1s5UH822fM9rkQc",
+        databaseURL: "https://das-cafe-kramer.firebaseio.com",
+        authDomain: "das-cafe-kramer.firebaseapp.com",
+    };
+    firebase.initializeApp(config);
+    firebase.auth().onAuthStateChanged(loginChanged);
+    /* This function is called when the user clicks
+     * the sign-up button. */
+    function signUp() {
+        // Get the values from the email and password input fields
+        var email = document.getElementById("inputEmail").value;
+        var password = document.getElementById("inputPassword").value;
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(handleError);
+    }
+    function loginChanged(user) {
+        if (user) {
+            console.log("User with email >" + user.email + "< is signed in.");
+            /* Check if user profile exists. 
+             * If not, this is is a new user and we need to create
+             * the extended profile (and update displayName) */
+            var profileExists = false;
+            var userProfile = firebase.database().ref('userprofiles/' + user.uid);
+            userProfile.once('value', function(value) {
+                if (value.val()) {
+                    console.log("User profile is already there...");
+                }
+                else {
+                    console.log("User profile does not exist, must be a  new user...");
+                    user.updateProfile({
+                        displayName: document.getElementById("inputDisplayName").value
+                    }).then(function() {
+                        console.log("Successfully updated standard profile.");
+                    }).catch(handleError);
+                    createExtendedUserProfile();
+                }
+            });
+        }
+        else {
+            console.log("No user signed in.");
+        }
+    }
+    
+    function createExtendedUserProfile() {
+        var user = firebase.auth().currentUser;
+        
+        // Make sure we have a logged in user
+        if(user) {
+            var profileRef = firebase.database().ref('userprofiles/' + user.uid);
+            profileRef.set( {
+                city: document.getElementById("inputCity").value
+                
+                // Here you can add as many properties as you like....
+            }).then(() => {
+                console.log("Successfully updated extended user profile...")
+            });
+        }
+    }
+
+    /* This is called if something goes wrong when logging in or logging out.
+     * For example if the user's password is wrong. */
+    function handleError(error) {
+        console.error(error.code + ": " + error.message);
+    }
+</script>
+
+</body>
+
+</html>

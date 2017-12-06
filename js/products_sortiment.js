@@ -4,7 +4,7 @@
 // TODO: Replace with your project's customized code snippet
 var config = {
     apiKey: "AIzaSyDR4bKKZ8nkBIrS-H9i1s5UH822fM9rkQc",
-    databaseURL: "https://das-cafe-kramer.firebaseio.com/"
+    databaseURL: "https://das-cafe-kramer.firebaseio.com"
 };
 firebase.initializeApp(config);
 // Get a reference to the database's welcome text

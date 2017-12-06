@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+</html lang="de">
+
+<head>
+    <title>Anmeldung Cafe Kramer</title>
+<!-- wichtige meta tag einbinden -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Boostrap CSS Link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<!-- Unsere CSS Datei -->
+    <link rel="stylesheet"  href="css/color.css"> 
+    <link rel="stylesheet"  href="css/index.css"> 
+    <link rel="stylesheet"  href="css/neuAnmeldung.css">
+</head>
+
+<body>
+<!-- Logo ---------------------------------------------------------------------------------------- -->   
+<img src="images/logo_kramer.png" height="100px" style=float:"left">
+<br></br>
+ <!-- Navi bar ------------------------------------------------------------------------------------ -->            
+<div class="topnav">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <li class="nav-item dropdown">
+                 
+                 <a href="index.html"> Startseite</a>    
+                  <a href="sortiment_link.html">Sortiment</a>
+                  <a href="neuAnmeldung.html">Anmeldung/ Profil</a>
+                  <a href="ueber_uns.html">Über Uns</a>
+                  <a href="kontakt.html">Kontakt</a>
+                </li>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- Text ------------------------------------------------------------------------------- -->
+<br></br>
+    <div align="center"> 
+        <h1>Das Cafe Kramer</h1>
+        <h2>zum Bestellen hier anmelden!</h2>
+    </div>
+<br></br>
+<!-- Vorlage von Nicolas, Login, ProfileUpdate, Profil Card ----------------------------------------- -->
+<div class="container">
+
+    <div class="row align-items-center" id="loginForm">
+        <div class="col-sm-3"></div>
+        <div class="col align-self-center">
+            <h3 class="text-center">Anmeldung</h3>
+            <hr>
+            <div class="form-group">
+                <label for="inputEmail">Email-Adresse</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email-Adresse">
+                <small id="emailHelp" class="form-text text-muted">Die Email-Adresse wird an keine Dritten weitergegeben.</small>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Passwort</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Passwort">
+            </div>
+
+            <!-- When this is clicked, login() is called -->
+            <button id="btnLogin" onclick="login()" class="btn btn-primary">Einloggen</button>
+            <br></br>
+            <small id="emailHelp" class="form-text text-muted">Sie haben noch keinen Account? Registrieren Sie sich hier</small>
+            <a class="btn btn-primary" href="regi_link.html"> Registrierung</a>
+            <hr>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+
+<!-- Hier fängt Update Profile -->
+    <div class="row align-items-center" id="updateProfileForm" hidden>
+        <div class="col-sm-3"></div>
+        <div class="col align-self-center">
+            <h3 class="text-center">Benutzerprofil</h3>
+            <hr>
+            <div class="form-group">
+                <label for="inputDisplayName">Benutzername</label>
+                <input type="text" class="form-control" id="inputDisplayName" placeholder="Vor- und Nachname">
+            </div>
+
+            <div class="form-group">
+                <label for="inputPhotoUrl">Foto URL</label>
+                <input type="text" class="form-control" id="inputPhotoUrl" placeholder="Foto URL">
+            </div>
+
+            <div class="form-group">
+                <label for="inputHobby">Hobby</label>
+                <input type="text" class="form-control" id="inputHobby" placeholder="Hobby">
+            </div>
+            <div class="form-group">
+                <label for="inputZipCode">Postleitzahl</label>
+                <input type="text" class="form-control" id="inputZipCode" placeholder="PLZ">
+            </div>
+            <div class="form-group">
+                <label for="inputCity">Stadt</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="Stadt">
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="inputCheckboxNewsletter">&nbsp;&nbsp;Newsletter abbonieren</label>
+            </div>
+
+            <!-- When this is clicked, updateProfile() is called -->
+            <button id="btnUpdateProfile" onclick="updateProfile()" class="btn btn-primary profileBtn">Profil aktualisieren</button>
+
+            <hr>
+<!-- Hier fängt Card Profile -->
+            <div class="card">
+                <div class="card-body">
+
+                    <!-- These two will be filled dynamically -->
+                    <h5 class="card-title" id="cardUserDisplayName">keine Angaben</h5>
+                    <div class="row">
+                        <div class="col-4">Hobby:</div>
+                        <div class="col-8" id="displayHobby">keine Angaben</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">PLZ:</div>
+                        <div class="col-8" id="displayZipCode">keine Angaben</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">Stadt:</div>
+                        <div class="col-8" id="displayCity">keine Angaben</div>
+                    </div>
+
+                    <img src="images/default.png" class="img-fluid" style="margin-top: 16px;" id="imgProfilePhoto">
+
+                </div>
+            </div>
+
+            <!-- When this is clicked, logout() is called -->
+            <button id="btnLogout" onclick="logout()" class="btn btn-primary" hidden>Ausloggen</button>
+
+        </div>
+    </div>
+
+</div>
+<!-- End of container, Vorlage Nicolas ---------------------------------------------------------- -->
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+<!-- Anmeldung js-->
+<script src="js/anmeldung.js"></script>
+
+</body>
+
+</html>
