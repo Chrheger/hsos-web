@@ -1,0 +1,17 @@
+/* Vorlage nicolas eingefügt von vino 29.11.2017*/
+{ 
+  "rules": {
+
+    "products": {
+        ".read": true,
+        ".write": false
+    },
+
+    "userprofiles": {
+    "$uid": {    
+        ".read": "$uid === auth.uid", 
+        ".write": "$uid === auth.uid"
+      }
+    }        
+  }
+}  
