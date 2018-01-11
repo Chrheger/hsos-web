@@ -11,7 +11,14 @@
     "$uid": {    
         ".read": "$uid === auth.uid", 
         ".write": "$uid === auth.uid"
-      }
+       },
+    "shoppingcarts": {
+
+     ".read": true,
+
+     ".write": true
+
+     }
     }        
   }
 }  

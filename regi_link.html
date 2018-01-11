@@ -30,6 +30,7 @@
                   <a href="neuAnmeldung.html">Anmeldung/ Profil</a>
                   <a href="ueber_uns.html">Über Uns</a>
                   <a href="kontakt.html">Kontakt</a>
+                  <a href="letzte_bestellung.html">letzte Bestellung</a>
                 </li>
             </div>
           </div>
@@ -63,7 +64,7 @@
 
 
             <!-- When this is clicked, signUp() is called -->
- <a href="neuAnmeldung.html"  onclick="signUp()" class="btn btn-primary">Registrieren</a>
+ <button onclick="signUp()" class="btn btn-primary">Registrieren</button>
 
 
 
@@ -97,6 +98,7 @@
     /* This function is called when the user clicks
      * the sign-up button. */
     function signUp() {
+        console.log("SignUp()");
         // Get the values from the email and password input fields
         var email = document.getElementById("inputEmail").value;
         var password = document.getElementById("inputPassword").value;
@@ -123,7 +125,12 @@
                     }).catch(handleError);
                     createExtendedUserProfile();
                 }
+                
+                
             });
+            
+            // Weiterleitung
+            window.location.href = "neuAnmeldung.html";
         }
         else {
             console.log("No user signed in.");
