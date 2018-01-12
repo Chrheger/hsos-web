@@ -1,8 +1,16 @@
-/* Vorlage nicolas eingefügt von vino 29.11.2017*/
-{ 
-  "rules": {
+{
+  "rules": { ".write":"auth!=null",
 
+    "shoppingcarts":{
+       ".read": true,
+       ".write": false
+    },
+    
     "products": {
+        ".read": true,
+        ".write": false
+    },
+    "orders": {
         ".read": true,
         ".write": false
     },
@@ -11,14 +19,7 @@
     "$uid": {    
         ".read": "$uid === auth.uid", 
         ".write": "$uid === auth.uid"
-       },
-    "shoppingcarts": {
-
-     ".read": true,
-
-     ".write": true
-
-     }
+      }
     }        
   }
-}  
+}
